@@ -56,13 +56,6 @@ While we don't need to be a Ruby expert to use Jekyll, understanding a few core 
     *   Run `bundle install` in our project's root directory to install all dependencies specified in the `Gemfile`.
     *   Always run Jekyll commands using `bundle exec`. For example, instead of `jekyll serve`, use `bundle exec jekyll serve`. This ensures that Jekyll runs with the exact gem versions defined in our project's `Gemfile.lock`, preventing conflicts.
 
-4.  **Basic Ruby Syntax (for Configuration and Templating):**
-    *   **YAML:** Jekyll configuration files (`_config.yml`) are written in YAML, which maps easily to Ruby hashes. Understanding key-value pairs and basic indentation is crucial.
-    *   **Variables:** Ruby uses `variable_name = value` for assignment.
-    *   **Hashes (Dictionaries):** Ruby hashes store key-value pairs (e.g., `{ key: "value" }`). In YAML, `key: value` is directly interpreted into a Ruby hash when Jekyll processes it.
-    *   **Arrays:** Ordered lists of items, e.g., `["item1", "item2"]`.
-    *   **Liquid Templating Language:** While not Ruby itself, Liquid is a templating language written in Ruby and used by Jekyll. We'll use Liquid syntax (e.g., `{{ page.title }}`, `{% for post in site.posts %}`) extensively for dynamic content in our Jekyll templates. Understanding how Liquid accesses Jekyll's site, page, and post data (which are Ruby objects/hashes) is key.
-
 ### Installation Considerations
 For Windows users, native Ruby installations can sometimes present challenges with certain gems that have native extensions. 
 This is not mandatory but recommanded: We can use the Windows Subsystem for Linux (WSL), which provides a Linux environment where Ruby and Jekyll can be installed and run more smoothly, mirroring a typical development setup on Linux or macOS. 
