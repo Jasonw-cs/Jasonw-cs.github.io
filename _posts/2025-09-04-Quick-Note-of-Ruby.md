@@ -40,7 +40,7 @@ For many GitHub users, our first practical encounter with Ruby is through Jekyll
 
 ## Minimal Ruby Knowledge for a Jekyll Project
 While we don't need to be a Ruby expert to use Jekyll, understanding a few core concepts will significantly help:
-
+{% raw %}
 1.  **Ruby Installation:**
     *   We need a working Ruby environment on our machine.
     *   Tools like `rbenv` or `RVM` (Ruby Version Manager) are often used by developers to manage multiple Ruby versions, but for a simple Jekyll project, a direct system installation might suffice depending on our OS.
@@ -55,6 +55,16 @@ While we don't need to be a Ruby expert to use Jekyll, understanding a few core 
     *   After installing `bundler`, we'll typically have a `Gemfile` in our Jekyll project. This file lists all the gems our project needs.
     *   Run `bundle install` in our project's root directory to install all dependencies specified in the `Gemfile`.
     *   Always run Jekyll commands using `bundle exec`. For example, instead of `jekyll serve`, use `bundle exec jekyll serve`. This ensures that Jekyll runs with the exact gem versions defined in our project's `Gemfile.lock`, preventing conflicts.
+
+{% raw %}
+4.  **Basic Ruby Syntax (for Configuration and Templating):**
+    *   **YAML:** Jekyll configuration files (`_config.yml`) are written in YAML, which maps easily to Ruby hashes. Understanding key-value pairs and basic indentation is crucial.
+    *   **Variables:** Ruby uses `variable_name = value` for assignment.
+    *   **Hashes (Dictionaries):** Ruby hashes store key-value pairs (e.g., `{ key: "value" }`). In YAML, `key: value` is directly interpreted into a Ruby hash when Jekyll processes it.
+    *   **Arrays:** Ordered lists of items, e.g., `["item1", "item2"]`.
+    *   **Liquid Templating Language:** While not Ruby itself, Liquid is a templating language written in Ruby and used by Jekyll. We'll use Liquid syntax (e.g., `{{ page.title }}`, `{% for post in site.posts %}`) extensively for dynamic content in our Jekyll templates. Understanding how Liquid accesses Jekyll's site, page, and post data (which are Ruby objects/hashes) is key.
+{% endraw %}
+
 
 ### Installation Considerations
 For Windows users, native Ruby installations can sometimes present challenges with certain gems that have native extensions. 
