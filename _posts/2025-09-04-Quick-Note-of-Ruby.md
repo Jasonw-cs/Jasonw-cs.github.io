@@ -56,7 +56,6 @@ While we don't need to be a Ruby expert to use Jekyll, understanding a few core 
     *   Run `bundle install` in our project's root directory to install all dependencies specified in the `Gemfile`.
     *   Always run Jekyll commands using `bundle exec`. For example, instead of `jekyll serve`, use `bundle exec jekyll serve`. This ensures that Jekyll runs with the exact gem versions defined in our project's `Gemfile.lock`, preventing conflicts.
 
-{% raw %}
 4.  **Basic Ruby Syntax (for Configuration and Templating):**
     *   **YAML:** Jekyll configuration files (`_config.yml`) are written in YAML, which maps easily to Ruby hashes. Understanding key-value pairs and basic indentation is crucial.
     *   **Variables:** Ruby uses `variable_name = value` for assignment.
