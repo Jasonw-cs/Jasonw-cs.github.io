@@ -1,6 +1,6 @@
 # Site settings
 title: Jason-json
-SEOTitle: Jason-json |
+SEOTitle: Jason-json
 header-img: img/Sky-city.jpg
 description: "Time to commit: Friday only"
 keyword: "Jason-json"
@@ -23,24 +23,16 @@ paginate: 10
 exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
 anchorjs: true  # if you want to customize anchor. check out line:181 of `post.html`
 
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
 
-# Markdown settings
-# replace redcarpet to kramdown
-# although redcarpet can auto highlight code, the lack of header-id makes the catalog impossible, so I switched to kramdown
-# documentation: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM  # use GitHub Flavored Markdown !important
 
-# Featured Tags
 featured-tags: true
 featured-condition-size: 1
 
-# Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
