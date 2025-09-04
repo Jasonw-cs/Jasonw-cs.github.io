@@ -64,10 +64,8 @@ While we don't need to be a Ruby expert to use Jekyll, understanding a few core 
     *   **Liquid Templating Language:** While not Ruby itself, Liquid is a templating language written in Ruby and used by Jekyll. We'll use Liquid syntax (e.g., `{{ page.title }}`, `{% for post in site.posts %}`) extensively for dynamic content in our Jekyll templates. Understanding how Liquid accesses Jekyll's site, page, and post data (which are Ruby objects/hashes) is key.
 
 ### Installation Considerations
-Ruby generally works across various operating systems. For Windows users, native Ruby installations can sometimes present challenges with certain gems that have native extensions. 
+For Windows users, native Ruby installations can sometimes present challenges with certain gems that have native extensions. 
 This is not mandatory but recommanded: We can use the Windows Subsystem for Linux (WSL), which provides a Linux environment where Ruby and Jekyll can be installed and run more smoothly, mirroring a typical development setup on Linux or macOS. 
-Installing Ruby on our system generally won't conflict with existing JavaScript (Node.js) or Python installations, as each language environment manages its own packages and executables separately. 
-Ubuntu VM can provide a consistent and isolated development environment, but it's  unnecessary overhead for a simple Jekyll project if we're already opt for WSL on Windows.
 
 ## Ruby Resources for Beginners
 *   **Official Ruby Website:** [ruby-lang.org](https://www.ruby-lang.org/en/)
