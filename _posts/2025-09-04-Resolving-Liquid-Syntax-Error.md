@@ -16,20 +16,13 @@ tags:
 Front Matter
 Every Jekyll post or page must start with YAML Front Matter, enclosed by triple-dashed lines. This defines metadata like layout, title, date, categories, and tags.
 
----
-layout: post
-title: My First Jekyll Post
-date: 2025-01-01 10:00:00 +0000
-categories: [Jekyll, Markdown]
-tags: [static site, blog]
----
 Using Liquid in Markdown
 Jekyll processes Liquid tags and objects within our Markdown files before converting them to HTML. This allows for dynamic content.
 
-Variables: {{ site.title }}, {{ page.title }}
-Conditionals: {% if page.tags contains 'Jekyll' %} ... {% endif %}
-Loops: {% for post in site.posts limit: 5 %} ... {% endfor %}
-Crucial Note: Liquid syntax is processed by Jekyll. If we want to display Liquid syntax as literal text (e.g., in a code example within our post) instead of having Jekyll interpret it, we must escape it.
+> Variables: {{ site.title }}, {{ page.title }}
+> Conditionals: {% if page.tags contains 'Jekyll' %} ... {% endif %}
+> Loops: {% for post in site.posts limit: 5 %} ... {% endfor %}
+> Crucial Note: Liquid syntax is processed by Jekyll. If we want to display Liquid syntax as literal text (e.g., in a code example within our post) instead of having Jekyll interpret it, we must escape it.
 
 # Resolving the "Liquid Syntax Error: 'for' tag was never closed"
  
