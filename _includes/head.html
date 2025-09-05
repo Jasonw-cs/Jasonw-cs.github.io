@@ -36,6 +36,9 @@
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
 
+    <!-- Custom Image Styles -->
+    <link rel="stylesheet" href="{{ "/css/custom-images.css" | prepend: site.baseurl }}">
+
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
@@ -48,7 +51,7 @@
 
     <!-- Mermaid.js for Diagrams -->
     <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.js';
       mermaid.initialize({ startOnLoad: true });
     </script>
 </head>
