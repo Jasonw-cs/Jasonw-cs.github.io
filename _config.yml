@@ -1,12 +1,12 @@
 # Site settings
 title: Jason-json
-SEOTitle: Jason-json
+SEOTitle: Jason-json  
 header-img: img/Sky-city.jpg
 description: "Time to commit: Friday only"
 keyword: "Jason-json"
-url: "https://github.com/Jasonw-cs"
+url: "https://jasonw-cs.github.io"  # ← Fixed: actual site URL
 baseurl: ""
-github_repo: "https://github.com/Jasonw-cs"
+github_repo: "https://github.com/Jasonw-cs/Jasonw-cs.github.io"  # ← Fixed: full repo URL
 
 # Sidebar settings
 sidebar: true
@@ -14,21 +14,39 @@ sidebar-about-description: "When the homework is done..."
 sidebar-avatar: /img/about-Jason-json.jpg
 
 # SNS settings
-RSS: false
+RSS: true  # ← Changed: Enable RSS (you'll get auto-generated feed)
 github_username: Jasonw-cs
 
 # Build settings
 permalink: pretty
 paginate: 10
 exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
-anchorjs: true  # if you want to customize anchor. check out line:181 of `post.html`
+anchorjs: true
 
-gems: [jekyll-paginate]
+# ← FIXED: Changed from 'gems:' to 'plugins:'
+plugins:
+  - jekyll-paginate
+  - jekyll-feed          # Auto RSS/Atom feed
+  - jekyll-seo-tag       # SEO meta tags  
+  - jekyll-sitemap       # Auto sitemap.xml
+  - jekyll-redirect-from # Handle redirects
+  - jekyll-github-metadata # Access repo data
 
+# ← ENHANCED: Better markdown processing
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM  # use GitHub Flavored Markdown !important
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: true
+    start_line: 1
+
+# ← NEW: Liquid error handling (prevents build failures)
+liquid:
+  error_mode: warn
+  strict_filters: false  
+  strict_variables: false
 
 featured-tags: true
 featured-condition-size: 1
@@ -42,3 +60,22 @@ favorites_courses:
     href: "https://github.com/code50/"
   - title: "me50"
     href: "https://github.com/me50/"
+
+# ← NEW: SEO improvements
+author: Jason-json
+twitter:
+  username: # Add if you have Twitter
+social:
+  name: Jason-json
+  links:
+    - https://github.com/Jasonw-cs
+
+# ← NEW: Default values for posts
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Jason-json"
+      show_excerpts: true
