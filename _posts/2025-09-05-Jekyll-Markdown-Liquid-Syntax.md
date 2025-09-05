@@ -8,60 +8,58 @@ header-img: img/Victorious-Knight.jpg
 catalog: true
 tags:
     - Jekyll
-    - Markdown
     - Liquid
+    - Fix
     - Notes
 ---
 
-# Jekyll Markdown & Liquid Syntax
+# Jekyll Liquid Syntax Fix
 
-## Markdown Basics
-- **Headings**: Use `#` for H1, `##` for H2, etc.
-- **Emphasis**: `*italic*` and `**bold**`
-- **Lists**: `*` for bullets, `1.` for numbers
-- **Links**: `[text](url)`
-- **Code**: `` `inline` `` or fenced blocks with ``` 
+## The Problem
+- Jekyll processes all curly braces `{{ }}` and percent tags as template code
+- This breaks when you try to show code examples containing these characters
+- Results in "Liquid syntax error" and failed builds
 
-## Jekyll Front Matter
-- **What**: YAML metadata at top of every post/page.
-- **Format**:
-  ```yaml
-  ---
-  layout: post
-  title: My Post
-  date: 2025-01-01
-  tags: [jekyll, markdown]
-  ---
-  ```
+## The Solution
+Wrap any problematic code in raw tags:
 
-## Liquid Templating
-- **Variables**: {% raw %}`{{ site.title }}`{% endraw %}, {% raw %}`{{ page.title }}`{% endraw %}
-- **Conditionals**: {% raw %}`{% if condition %} ... {% endif %}`{% endraw %}
-- **Loops**: {% raw %}`{% for item in collection %} ... {% endfor %}`{% endraw %}
+```
+{% raw %}
+Your code with {{ }} or {% %} here
+{% endraw %}
+```
 
-## Critical: Liquid Syntax Errors
-- **Problem**: Jekyll processes `{{ }}` and `{% %}` as template code
-- **Error**: "Liquid syntax error: 'for' tag was never closed"
-- **Solution**: Wrap examples in {% raw %}`{% raw %}`{% endraw %} tags
+## How to Apply the Fix
 
-## Fix Examples
-- **Wrong**: `Use` {% raw %}`{{ page.title }}`{% endraw %} `for titles` (without raw tags)
-- **Correct**: `Use` {% raw %}`{{ page.title }}`{% endraw %} `for titles` (with raw tags)
-- **Code blocks**:
-  {% raw %}
-  ```
-  {% raw %}
-  ```liquid
-  {% for post in site.posts %}
-    {{ post.title }}
-  {% endfor %}
-  ```
-  {% endraw %}
-  ```
-  {% endraw %}
+### For Inline Code
+Wrap with raw tags:
+```
+{% raw %}`{{ your.code.here }}`{% endraw %}
+```
 
-## Quick Reference
-- **Inline Liquid**: Wrap with `raw` and `endraw` tags
-- **Code blocks**: Use `raw` tags around entire block
-- **Regular code**: Standard ``` blocks work fine
-- **Rule**: Always escape Liquid examples to prevent build errors
+### For Code Blocks
+Wrap the entire block:
+```
+{% raw %}
+```javascript
+const obj = {{ key: 'value' }};
+```
+{% endraw %}
+```
+
+## Common Triggers
+- JavaScript template literals with `${ }`
+- Vue.js or Angular syntax with `{{ }}`
+- Any code showing Jekyll/Liquid examples
+- Handlebars templates
+
+## Quick Fix Steps
+1. Find the line causing the error
+2. Wrap the problematic code with `{% raw %}` and `{% endraw %}`
+3. Commit and push
+4. Build should succeed
+
+## Prevention
+- Always use raw tags when documenting template syntax
+- Test locally with `bundle exec jekyll serve` before pushing
+- Keep code examples in separate files when possible
