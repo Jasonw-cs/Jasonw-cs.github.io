@@ -36,14 +36,16 @@ Crucial Note: Liquid syntax is processed by Jekyll. If we want to display Liquid
 
 I encountered this error because 1 included examples of Liquid syntax (specifically {% for ... %}) directly in a Markdown list without escaping them. Jekyll attempted to parse these incomplete for tags, leading to a build failure.
 Our mistake was similar to this:
-
+{% endraw %} 
+ {% raw %} 
 *   **Loops:** `{% for post in site.posts %}` for iterating through posts.
     *   This would cause an error because `{% endfor %}` is missing.
+{% endraw %} 
 The Solution:
 To prevent Jekyll from interpreting Liquid code examples, we must wrap them in {% raw %}...{% endraw %} tags. This tells Jekyll to treat everything between raw and endraw as plain text, passing it directly to the output without processing.
 The Fix in our Markdown file:
 We changed lines like:
-
+{% endraw %} 
 *   **Liquid Templating Language:** While not Ruby itself, Liquid is a templating language written in Ruby and used by Jekyll. We'll use Liquid syntax (e.g., `{{ page.title }}`, `{% for post in site.posts %}`) extensively for dynamic content in our Jekyll templates.
 to:
 *   **Liquid Templating Language:** While not Ruby itself, Liquid is a templating language written in Ruby and used by Jekyll. We'll use Liquid syntax (e.g., {% raw %}`{{ page.title }}`{% endraw %}, {% raw %}`{% for post in site.posts %}`{% endraw %}) extensively for dynamic content in our Jekyll templates.
