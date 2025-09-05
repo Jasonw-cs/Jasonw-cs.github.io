@@ -45,8 +45,8 @@ tags:
 - **Solution**: Wrap examples in {% raw %}`{% raw %}`{% endraw %} tags
 
 ## Fix Examples
-- **Wrong**: `Use {{ page.title }} for titles`
-- **Correct**: `Use` {% raw %}`{{ page.title }}`{% endraw %} `for titles`
+- **Wrong**: `Use` {% raw %}`{{ page.title }}`{% endraw %} `for titles` (without raw tags)
+- **Correct**: `Use` {% raw %}`{{ page.title }}`{% endraw %} `for titles` (with raw tags)
 - **Code blocks**:
   {% raw %}
   ```
