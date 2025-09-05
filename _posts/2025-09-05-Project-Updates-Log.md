@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Project Updates Log
+title:      Updates: Liquid Syntax, SEO and Gems
 subtitle:   Recent Improvements and Optimizations
 date:       2025-09-05
 author:     Jason-json
@@ -39,8 +39,7 @@ tags:
 - **RSS Available**: ✅ Feed auto-generated at `/feed.xml`
 
 ## Next Steps
-- **Content Creation**: Focus on writing without fighting syntax errors
-- **Theme Customization**: Minor visual improvements as needed
+ - **Theme Customization**: Minor visual improvements as needed
 - **Documentation**: Create reusable code patterns for future posts
 - **Alternative Evaluation**: Keep Next.js + Outstatic as backup option
 
