@@ -1,0 +1,12 @@
+<div class="image-gallery">
+  {%- for image in include.images -%}
+    <div class="gallery-item">
+      <img src="{{ site.baseurl }}{{ include.path | default: '/img/gallery/' }}{{ image.name }}"
+           alt="{{ image.alt }}"
+           loading="lazy">
+      {% if image.caption %}
+        <p class="caption">{{ image.caption }}</p>
+      {% endif %}
+    </div>
+  {%- endfor -%}
+</div>
