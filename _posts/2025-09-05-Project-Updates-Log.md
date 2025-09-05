@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Updates: Liquid Syntax, SEO and Gems
-subtitle:   Recent Improvements and Optimizations
+title:      "Updates: Liquid Syntax, SEO and Gems"
+subtitle:   "Recent Improvements and Optimizations"
 date:       2025-09-05
 author:     Jason-json
 header-img: img/Victorious-Knight.jpg
