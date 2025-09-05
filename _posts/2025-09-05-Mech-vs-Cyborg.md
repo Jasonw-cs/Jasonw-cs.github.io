@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Mech Warrior vs Cyborg Wizard
+title:      How to Create Gallery
 subtitle:   "Battle in a futuristic city"
 date:       2025-09-05
 author:     Jason-json
@@ -23,16 +23,11 @@ gallery_items:
     caption: "Intense Mid-Action"
 ---
 
-Welcome to my new post! Here is the collection of photos I wanted to share.
-
-This is where you write the text of your blog post. You can write paragraphs here just like normal.
-
-Now, here is the gallery:
+This a template of galley:
 
 {% include image-gallery.html images=page.gallery_items path="/img/gallery/cyborg-vs-mech/" %}
 
-And you can continue writing more text after the gallery if you want.
-
+You can write the text of your blog post, paragraphs like normal, before and/or after the gallery.
 
 ### How to Create an Image Gallery
 
@@ -55,11 +50,10 @@ gallery_items:
     alt: "A descriptive alt text for the second image."
     caption: "Optional caption for image two"
 ```
-
 **Step 3: Place the Gallery in Your Post**
 
 In the body of your post, add the following line where you want the gallery to appear. **Remember to update the `path`!**
 
 ```
-{% include image-gallery.html images=page.gallery_items path="/img/gallery/my-new-gallery/" %}
+{% raw %}{% include image-gallery.html images=page.gallery_items path="/img/gallery/my-new-gallery/" %}{% endraw %}
 ```
