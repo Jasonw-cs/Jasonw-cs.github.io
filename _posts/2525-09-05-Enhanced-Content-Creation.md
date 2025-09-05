@@ -4,6 +4,7 @@ title: Enhanced Content Creation
 subtitle: New Markdown and image features
 date: 2025-09-05
 author: Jason-json
+catalog: true
 header-img: img/posts/elden-ring.jpg
 tags: 
     - Log
