@@ -94,13 +94,15 @@ Check out the [GitHub Pages docs][1] and [Markdown Guide][2].
 ## Images
 
 ### Basic Image
-![Alt text for accessibility](https://via.placeholder.com/600x300/4CAF50/FFFFFF?text=Sample+Image)
+{% include responsive-image.html name="placeholder-600x300.jpg" path="/img/assets/" alt="Alt text for accessibility" %}
 
-### Image with Title
-![Sample diagram](https://via.placeholder.com/400x200/2196F3/FFFFFF?text=Diagram "This is a diagram")
+### Image with Title and Caption
+{% include responsive-image.html name="placeholder-400x200.jpg" path="/img/assets/" alt="Sample diagram" caption="This is a diagram" %}
 
 ### Linked Image
-[![Clickable image](https://via.placeholder.com/300x150/FF9800/FFFFFF?text=Click+Me)](https://github.com/Jasonw-cs)
+<a href="https://github.com/Jasonw-cs">
+  {% include responsive-image.html name="placeholder-300x150.jpg" path="/img/assets/" alt="Clickable image" %}
+</a>
 
 ---
 
