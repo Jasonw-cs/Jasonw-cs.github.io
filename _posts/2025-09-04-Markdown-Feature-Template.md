@@ -15,7 +15,7 @@ tags:
 
 # Markdown Feature Template
 
-This post demonstrates the available markdown features for Jekyll posts. 
+This post demonstrates  available markdown features for Jekyll posts. 
 
 ## Text Formatting
 
@@ -368,8 +368,10 @@ This is <mark>highlighted text</mark> using HTML.
 ## Jekyll-Specific Features
 
 ### Including Files
-<!-- Include a custom component -->
-<!-- {% include button.html text="Click Me" url="https://example.com" %} -->
+{% raw %}
+<!-- Example include syntax (requires creating the include file first) -->
+{% include button.html text="Click Me" url="https://example.com" %}
+{% endraw %}
 
 ### Front Matter Variables
 - **Post Title**: {{ page.title }}
