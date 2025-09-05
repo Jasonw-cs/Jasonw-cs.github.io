@@ -61,7 +61,7 @@ tags:
   {% endraw %}
 
 ## Quick Reference
-- **Inline Liquid**: Wrap with {% raw %}`{% raw %}`{% endraw %} and {% raw %}`{% endraw %}`{% endraw %}
-- **Code blocks**: Use {% raw %}`{% raw %}`{% endraw %} around entire block
+- **Inline Liquid**: Wrap with `raw` and `endraw` tags
+- **Code blocks**: Use `raw` tags around entire block
 - **Regular code**: Standard ``` blocks work fine
 - **Rule**: Always escape Liquid examples to prevent build errors
