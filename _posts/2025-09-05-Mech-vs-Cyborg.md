@@ -46,7 +46,7 @@ And you can continue writing more text after the gallery if you want.
 
 In the YAML front matter (between the `---` lines) of your `.md` post file, add a `gallery_items` list:
 
-```yaml
+```
 gallery_items:
   - name: "image-1.jpg"
     alt: "A descriptive alt text for the first image."
@@ -60,7 +60,6 @@ gallery_items:
 
 In the body of your post, add the following line where you want the gallery to appear. **Remember to update the `path`!**
 
-```liquid
-{% include image-gallery.html images=page.gallery_items path="/img/gallery/my-new-gallery/" %}
 ```
+{% include image-gallery.html images=page.gallery_items path="/img/gallery/my-new-gallery/" %}
 ```
