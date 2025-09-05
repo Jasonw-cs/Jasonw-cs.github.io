@@ -1,11 +1,14 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Use GitHub Pages gem to ensure compatibility with GitHub's build environment
-gem 'github-pages', group: :jekyll_plugins
+# Use GitHub Pages gem (includes Jekyll + whitelisted plugins)
+gem "github-pages", group: :jekyll_plugins
 
-# Optional: Add faraday-retry if you're using Faraday v2+ and need retry middleware
-# gem 'faraday-retry'
-
-# Optional: Add any other plugins you use, but make sure they're supported by GitHub Pages
-# gem 'jekyll-paginate'
-# gem 'jekyll-seo-tag'
+# Explicitly list plugins for clarity (already included in github-pages)
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-paginate"
+  gem "jekyll-redirect-from"
+  gem "jekyll-github-metadata"
+end
