@@ -33,7 +33,7 @@ Now, here is the gallery:
 
 And you can continue writing more text after the gallery if you want.
 
-```markdown
+
 ### How to Create an Image Gallery
 
 **Step 1: Prepare & Upload Images**
