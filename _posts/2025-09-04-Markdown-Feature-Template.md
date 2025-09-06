@@ -13,8 +13,6 @@ tags:
     - Jekyll
 ---
 
-# Markdown Feature Template
-
 This post demonstrates  available markdown features for Jekyll posts. 
 
 ## Text Formatting
