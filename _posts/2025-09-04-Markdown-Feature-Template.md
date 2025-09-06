@@ -100,9 +100,11 @@ Check out the [GitHub Pages docs][1] and [Markdown Guide][2].
 {% include responsive-image.html name="placeholder-400x200.jpg" path="/img/assets/" alt="Sample diagram" caption="This is a diagram" %}
 
 ### Linked Image
-<a href="https://github.com/Jasonw-cs">
+<div>
+<a href="https://github.com/Jasonw-cs" target="_blank" rel="noopener noreferrer">
   {% include responsive-image.html name="placeholder-300x150.jpg" path="/img/assets/" alt="Clickable image" %}
 </a>
+</div>
 
 ---
 
