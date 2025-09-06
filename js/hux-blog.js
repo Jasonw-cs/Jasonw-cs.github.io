@@ -81,4 +81,37 @@ jQuery(document).ready(function($) {
                 }
             });
     }
+
+//
+// Generate Catalog by Hux
+//
+function generateCatalog(selector) {
+    var P = $('div.post-container'),
+        a, 
+        n, 
+        t, 
+        l, 
+        i, 
+        c;
+    a = P.find('h1,h2,h3,h4,h5,h6');
+    a.each(function () {
+        n = $(this).prop('tagName').toLowerCase();
+        i = "#" + $(this).prop('id');
+        $(this).attr("id", $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, ''));
+        i = "#" + $(this).attr('id');
+        t = $(this).text();
+        c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+        l = $('<li class="' + n + '_nav"></li>').append(c);
+        $(selector).append(l);
+    });
+    return true;
+}
+
+generateCatalog(".catalog-body");
+
+$('.catalog-toggle').click(function (e) {
+    e.preventDefault();
+    $('.side-catalog').toggleClass('fold');
+});
+
 });
