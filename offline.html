@@ -1,0 +1,34 @@
+---
+layout: default
+description: "It looks like you're offline. This page can't be displayed right now."
+header-img: "img/404-bg.jpg"
+permalink: /offline.html
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading" id="tag-heading">
+					<h1>You're Offline</h1>
+					<span class="subheading">{{ page.description }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- A small message to the user -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<p>We can't load the content you're looking for without an internet connection.</p>
+			<p>Please check your connection and try again. Previously visited pages may be available.</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.body.classList.add('page-fullscreen');
+</script>

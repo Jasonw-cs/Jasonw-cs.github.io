@@ -1,0 +1,13 @@
+{%- assign img_path = include.path | default: "/img/posts/" -%}
+{%- assign img_alt = include.alt | default: include.name -%}
+{%- assign img_class = include.class | default: 'img-responsive' -%}
+
+<figure class="image-container {{ img_class }}">
+  <img src="{{ site.baseurl }}{{ img_path }}{{ include.name }}"
+       alt="{{ img_alt }}"
+       loading="lazy"
+       class="{{ img_class }}">
+  {% if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

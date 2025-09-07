@@ -1,0 +1,84 @@
+# Site settings
+title: Jekyll Blog Starter
+SEOTitle: Jekyll Blog Starter by Jason-json
+header-img: img/Sky-city.jpg
+description: "A fast Jekyll blog template for GitHub Pages. Packed with PWA, image galleries, and enhanced Markdown. Ready to fork and deploy! Optimization ongoing!"
+keyword: "Jason-json"
+url: "https://jasonw-cs.github.io"
+baseurl: ""
+github_repo: "https://github.com/Jasonw-cs/Jasonw-cs.github.io"
+logo: /img/headers/og-default.jpg
+
+# Sidebar settings
+sidebar: true
+sidebar-about-description: "When the homework is done..."
+sidebar-avatar: /img/about-Jason-json2.jpg
+
+# SNS settings
+RSS: true
+github_username: Jasonw-cs
+
+# Build settings
+permalink: pretty
+paginate: 10
+exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
+anchorjs: true
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-github-metadata
+
+# Markdown Processing
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+# Liquid error handling
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+featured-tags: true
+featured-condition-size: 1
+
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+# Favorites
+favorites_courses:
+  - title: "Code 50"
+    href: "https://github.com/code50/"
+  - title: "me50"
+    href: "https://github.com/me50/"
+
+# SEO improvements
+author: Jason-json
+twitter:
+  username: # Add if you have Twitter
+social:
+  name: Jason-json
+  links:
+    - https://github.com/Jasonw-cs
+
+# Default values for posts
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Jason-json"
+      show_excerpts: true

@@ -1,0 +1,39 @@
+---
+layout: default
+description: "Page not found. Redirecting you to the homepage..."
+header-img: "img/404-bg.jpg"
+permalink: /404.html
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading" id="tag-heading">
+					<h1>404</h1>
+					<span class="subheading">{{ page.description }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- A small message to the user -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<p>We couldn't find the page you were looking for. We will automatically send you back to the homepage in 5 seconds.</p>
+			<p>If you are not redirected, <a href="{{ site.url }}">please click here</a>.</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.body.classList.add('page-fullscreen');
+
+	// Redirect to the homepage after 5 seconds
+	setTimeout(function() {
+		window.location.href = "{{ site.url }}";
+	}, 5000); // 5000 milliseconds = 5 seconds
+</script>
