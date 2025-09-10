@@ -32,6 +32,11 @@ plugins:
   - jekyll-redirect-from
   - jekyll-github-metadata
 
+# _sass 
+sass:
+  sass_dir: _sass
+  style: compressed 
+
 # Markdown Processing
 markdown: kramdown
 kramdown:
