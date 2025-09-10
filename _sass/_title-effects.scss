@@ -1,34 +1,107 @@
 // _sass/_title-effects.scss
 
+// -----------------------------------------------------------------------------
+// Global Text Effects for Headers, Navigation, and Tags
+// Aims to improve contrast and add a modern, floating aesthetic.
+// -----------------------------------------------------------------------------
+
+// --- Common Text Shadow Mixin for Reusability ---
+// This mixin allows us to easily apply the same text-shadow effect to multiple elements.
+@mixin text-3d-shadow($base-color, $border-color, $shadow-color, $shadow-blur: 8px) {
+  color: $base-color;
+  text-shadow:
+    -1px -1px 0 $border-color,
+     1px -1px 0 $border-color,
+    -1px  1px 0 $border-color,
+     1px  1px 0 $border-color,
+     3px  3px $shadow-blur $shadow-color;
+}
+
+
+// --- 1. Post Titles & Subtitles (Existing) ---
 header.intro-header .post-heading h1 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Adjust font to your theme */
-  font-size: 3.5em; /* Adjust for desired size */
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 3.5em;
   font-weight: 700;
-  text-transform: uppercase; /* Optional */
+  text-transform: uppercase;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.5em;
-  color: #ffffff; /* Base text color */
-
-  // Text border (1px black) + floating 3D shadow (dark grey, semi-transparent)
-  text-shadow:
-    -1px -1px 0 #000000,
-     1px -1px 0 #000000,
-    -1px  1px 0 #000000,
-     1px  1px 0 #000000,
-     3px  3px 8px rgba(0, 0, 0, 0.6);
+  @include text-3d-shadow(#ffffff, #000000, rgba(0, 0, 0, 0.6));
 }
 
 header.intro-header .post-heading h2.subheading {
-  color: #f0f0f0; /* Slightly off-white for subtitle */
-  font-size: 1.8em; /* Adjust for desired subtitle size */
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.8em;
   font-weight: 400;
-  
-  // Text border (1px black) + floating shadow
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-     1px  1px 0 #000,
-     -1px  1px 0 #000,
-     2px  2px 5px rgba(0, 0, 0, 0.5);
+  @include text-3d-shadow(#f0f0f0, #000000, rgba(0, 0, 0, 0.5), 5px); // Slightly less blur for subtitles
+}
+
+
+// --- 2. Homepage Hero - Site Title & Subtitle ---
+header.intro-header .site-heading h1 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 4.5em; /* Slightly larger for main site title */
+  font-weight: 800; /* Extra bold for impact */
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0.2em;
+  @include text-3d-shadow(#ffffff, #000000, rgba(0, 0, 0, 0.7), 10px); // More prominent shadow
+}
+
+header.intro-header .site-heading .subheading {
+  font-family: 'Lora', 'Times New Roman', serif; /* Often a different font for body/subtitle */
+  font-size: 1.8em;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0;
+  @include text-3d-shadow(#e0e0e0, #000000, rgba(0, 0, 0, 0.6), 6px);
+}
+
+
+// --- 3. Navigation Items ---
+nav.navbar-custom .navbar-nav li a {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 15px 15px; // Ensure consistent padding
+  @include text-3d-shadow(#ffffff, #000000, rgba(0, 0, 0, 0.5), 4px); // Softer shadow for nav
+  transition: all 0.2s ease-in-out; // Smooth transition for hover effect
+
+  &:hover {
+    @include text-3d-shadow(#f8f8f8, #000000, rgba(0, 0, 0, 0.7), 6px); // Slightly stronger on hover
+  }
+  // Remove Bootstrap's default active state box-shadow if it conflicts
+  &:focus {
+    outline: none;
+    background-color: transparent; // Ensure no background on focus
+  }
+}
+
+// --- 4. Tags (Pills) ---
+div.tags a {
+  display: inline-block; // Make it behave like a block element for padding/margin
+  padding: 0.3em 0.7em;
+  margin: 0.2em 0.2em; // Spacing between pills
+  background-color: rgba(108, 117, 125, 0.7); // Grey background, semi-transparent
+  color: #ffffff; // White text for contrast
+  border-radius: 0.25em; // Rounded corners for pill shape
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none; // Remove underline
+  transition: all 0.2s ease-in-out;
+
+  // Apply the text shadow
+  @include text-3d-shadow(#ffffff, #343a40, rgba(0, 0, 0, 0.4), 2px); // Lighter shadow for tags
+
+  &:hover {
+    background-color: rgba(87, 96, 105, 0.9); // Darker on hover
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-1px); // Subtle lift effect
+  }
 }
