@@ -1,0 +1,37 @@
+// _sass/_title-effects.scss
+
+// Styles for main blog post titles and subtitles in hero sections.
+// Targetting 'intro-header' and 'post-heading' structure.
+
+header.intro-header .post-heading h1 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 3.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+
+  // 1px border-like effect
+  text-shadow:
+    -1px -1px 0 #000000,
+     1px -1px 0 #000000,
+    -1px  1px 0 #000000,
+     1px  1px 0 #000000,
+
+    // 3D/floating shadow effect
+     3px  3px 8px rgba(0, 0, 0, 0.6);
+}
+
+header.intro-header .post-heading h2.subheading {
+  color: #f0f0f0;
+  font-size: 1.8em; // Adjusted slightly larger for subtitle impact
+  font-weight: 400;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+     1px  1px 0 #000,
+     -1px  1px 0 #000,
+     2px  2px 5px rgba(0, 0, 0, 0.5);
+}
